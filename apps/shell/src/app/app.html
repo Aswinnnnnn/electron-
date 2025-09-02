@@ -1,0 +1,19 @@
+<div class="app-shell">
+  <nav class="menu background">
+    <ul class="remote-menu">
+      <li>
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+      </li>
+      <li>
+        <a routerLink="nav" routerLinkActive="active">Nav</a>
+      </li>
+      <li>
+        <a routerLink="details" routerLinkActive="active">Details</a>
+      </li>
+    </ul>
+  </nav>
+  <main class="content">
+    <router-outlet></router-outlet>
+  </main>
+  
+</div>

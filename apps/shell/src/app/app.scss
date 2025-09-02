@@ -1,0 +1,67 @@
+/* Fixed left nav, content to the right */
+:host {
+	display: block;
+}
+
+.app-shell {
+	display: flex;
+}
+
+.menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 220px;
+	padding: 16px 12px;
+	overflow-y: auto;
+	box-shadow: 0 0 0 1px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.08);
+	background: #fff;
+	z-index: 10;
+	/* Lock in typography so remotes can't override via global selectors */
+	font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	font-size: 14px;
+	line-height: 1.4;
+}
+
+.remote-menu {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.remote-menu li {
+	margin-bottom: 8px;
+}
+
+.remote-menu a {
+	display: block;
+	padding: 8px 10px;
+	border-radius: 6px;
+	color: #1f2937;
+	text-decoration: none;
+	/* Increase specificity against global 'a { ... }' rules from remotes */
+	font: inherit;
+}
+
+.remote-menu a:hover {
+	background: #f3f4f6;
+}
+
+.remote-menu a.active {
+	background: #e5e7eb;
+	font-weight: 600;
+}
+
+.content {
+	margin-left: 220px; /* same as .menu width */
+	padding: 24px;
+	min-height: 100vh;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+/* Optional dark background for the app */
+body, :host-context(body) {
+	background: #f9fafb;
+}
